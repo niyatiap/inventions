@@ -1,0 +1,39 @@
+﻿@model InventionDiscovery.Models.Invention
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="probootstrap-section">
+    <div class="container">
+        <div class="probootstrap-section-heading text-center mb50 probootstrap-animate">
+            <h4 class="sub-heading">Information</h4>           
+        </div>
+        <div class="row">
+            <div class="col-md-12 probootstrap-animate">
+                <figure>
+                    <img src="@Url.Content(@Model.ImagePath)" height="100" class="img-responsive img-rounded">
+                </figure>
+            </div>
+            <div class="col-md-6 probootstrap-animate">
+                <p>@Html.DisplayFor(model => model.InventorName)</p>
+                <p>@Html.DisplayFor(model => model.Country)</p>
+                <p>@Html.DisplayFor(model => model.Year)</p>
+                <p>@Html.DisplayFor(model => model.InventionDiscovery)</p>
+                <p>@Html.DisplayFor(model => model.Biography)</p>
+            </div>
+  
+            <div class="col-md-6 probootstrap-animate">
+                <p>@Html.DisplayFor(model => model.Description)</p>
+            </div>            
+        </div>
+
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div> 
+    </div>
+</section>
+

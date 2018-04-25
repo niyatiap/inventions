@@ -1,0 +1,97 @@
+﻿@model InventionDiscovery.Models.Invention
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <section class="probootstrap-section">
+        <div class="container">
+            <div class="probootstrap-section-heading text-center mb50 probootstrap-animate">
+                <h4 class="sub-heading">Edit</h4>
+                <h2 class="heading">Details</h2>
+            </div>
+            <div class="form-horizontal">
+
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    <label class="col-md-2">Inventor Name</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.InventorName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.InventorName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Image</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ImagePath, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Year</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Country</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Biography</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Biography, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Biography, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Invention or Discovery</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.InventionDiscovery, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.InventionDiscovery, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2">Description</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary" value="Update" />
+                    </div>
+                </div>
+
+
+
+
+                <div>
+                    <h4>@Html.ActionLink("Back to List", "Index")</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

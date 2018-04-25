@@ -1,0 +1,29 @@
+﻿@model IEnumerable<InventionDiscovery.Models.Invention>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <section class="probootstrap-section">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
+                <div class="product-item">                   
+                    <figure><img src="@Url.Content(item.ImagePath)" @*height="100"*@ class="img-responsive"></figure>
+                    <div class="text">
+                        <h2 class="heading">@Html.DisplayFor(modelItem => item.InventionDiscovery)</h2>
+                        <p>@Html.DisplayFor(modelItem => item.InventorName)</p>
+                        <p><a href="@Url.Action("Details", new { id = item.Id})" class="btn btn-primary btn-sm"> View Details </a></p>
+                    </div>                    
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+  

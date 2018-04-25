@@ -1,0 +1,87 @@
+﻿@model InventionDiscovery.Models.Invention
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+  <section class="probootstrap-section">
+    <div class="container">
+        <div class="probootstrap-section-heading text-center mb50 probootstrap-animate">
+            <h4 class="sub-heading">Add More</h4>
+            <h2 class="heading">Inventions or Discoveries</h2>
+        </div>
+    
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="#" method="post" class="probootstrap-form mb60">
+                    @using (Html.BeginForm())
+                    {
+                         @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label for="fname">Inventor Name</label>
+                                    @Html.TextBoxFor(x => x.InventorName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.InventorName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lname">Image</label>
+                                    @Html.TextBoxFor(x => x.ImagePath, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fname">Year</label>
+                                    @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lname">Country</label>
+                                    @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Biography</label>
+                            @Html.TextAreaFor(x => x.Biography, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Biography, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Invention or Discovery</label>
+                            @Html.TextBoxFor(x => x.InventionDiscovery, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.InventionDiscovery, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Description</label>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Create">
+                        </div>
+                    }
+                    </form>
+                </div>
+            </div>       
+    </div>
+</section>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+           
+
+       
